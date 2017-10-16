@@ -61,6 +61,9 @@ const ScrollableTabBar = createClass({
   },
 
   updateView(offset) {
+    if (!offset.value) {
+        offset.value = 0; 
+    }
     const position = Math.floor(offset.value);
     const pageOffset = offset.value % 1;
     const tabCount = this.props.tabs.length;
